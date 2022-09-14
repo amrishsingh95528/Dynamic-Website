@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New Manager</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+body {
+	background-image: url(/image/flower.gif);
+	opacity: 0.8;
+}
+
+.in {
+	width: 240px;
+	height: 30px;
+	border-radius: 5px 10px;
+	
+	
+}
+
+div {
+	padding: 2px;
+	margin-right:60px;
+	
+}
+
+sup {
+	color: red;
+}
+
+#container {
+	width: 555px;
+	height: 500px;
+	background: black;
+	border-radius: 10px 40px;
+	border: 5px solid red;
+	margin: auto;
+	margin-top: 60px;
+	
+}
+
+h2 {
+	text-align: center;
+}
+
+fieldset {
+	width: 100%;
+	color: yellow;
+}
+
+.font {
+	color: yellow;
+}
+
+.gen {
+	margin-left: 40px;
+}
+
+select {
+	width: 300px;
+	height: 30px;
+	border-radius: 5px 10px;
+}
+
+.but1 {
+	width: 235px;
+	height: 35px;
+	background: red;
+	border-radius: 10px 40px;
+	color:white;
+}
+
+.but2 {
+	width: 235px;
+	height: 35px;
+	background: green;
+	border-radius: 40px 10px;
+	color:white;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<form th:action="@{/saveManager}" th:object="${manager}" method="POST">
+		<input type="hidden" th:field="*{id}" />
+			<h2 class="font">Manager Registration Form</h2>
+			<div class="row">
+			<div class="col-sm-4">
+				<div id="fullName">
+					<label class="font">Full Name <sup>*</sup></label><br> <input
+						type="text" th:field="*{fullName}" class="in"
+						placeholder="Enter your Full Name">
+				</div>
+				</div>
+				<div class="col-sm-4">
+				<div id="number">
+					<label class="font">Number <sup>*</sup></label><br> <input
+						type="number" th:field="*{number}" class="in"
+						placeholder="Enter your number">
+				</div>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-sm-4">
+				<div id="email">
+					<label class="font">Email <sup>*</sup></label><br> <input
+						type="email" th:field="*{email}" class="in"
+						placeholder="Enter your email Id">
+				</div>
+				</div>
+				<div class="col-sm-4">
+				<div id="address">
+					<label class="font">Address <sup>*</sup></label><br> <input
+						type="text" th:field="*{address}" class="in"
+						placeholder="Enter your Address">
+				</div>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-sm-4">
+				<div id="department">
+					<label class="font">Department <sup>*</sup></label><br> <input
+						type="text" th:field="*{department}" class="in" placeholder="Enter your Department">
+				</div>
+				</div>
+				<div class="col-sm-4">
+				<div id="designation">
+					<label class="font">Designation <sup>*</sup></label><br> <input
+						type="text" th:field="*{designation}" class="in" placeholder="Enter your Designation">
+				</div>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-sm-4">
+				<div id="username">
+					<label class="font">Username <sup>*</sup></label><br> <input
+						type="text" th:field="*{username}" class="in" placeholder="Enter your username">
+				</div>
+				</div>
+				<div class="col-sm-4">
+				<div id="password">
+					<label class="font">Password <sup>*</sup></label><br> <input
+						type="text" th:field="*{password}" class="in" placeholder="Enter your Password">
+				</div>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-sm-4">
+				<div id="joinDate">
+					<label class="font">Joining Date <sup>*</sup></label><br> <input
+						type="date" th:field="*{joinDate}" class="in">
+				</div>
+				</div>
+				<div class="col-sm-4">
+				<div id="lastDate">
+					<label class="font">Leave Date <sup>*</sup></label><br> <input
+						type="date" th:field="*{lastDate}" class="in">
+				</div>
+				</div>
+			</div>
+			<br>
+			<div class="button">
+				<input type="reset" class="but1"> <input type="submit"
+					class="but2">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

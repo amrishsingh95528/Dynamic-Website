@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<meta charset="ISO-8859-1">
+	<title>Add New SC</title>
+</head>
+<body>
+	<div class="container py-4">
+	<hr>
+		<h4>Add New Study Center</h4>
+		<hr>
+		<form action="#" th:action="@{/members/save}" th:object="${member}" method="POST">
+				<input type="hidden" th:field="*{id}" />
+				<input type="text" th:field="*{sr}" placeholder="Serial Number" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{district}" placeholder="District" class="form-control mb-4 col-4 ">
+				<input type="text" th:field="*{study_center_code}" placeholder="Study Center Code" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{study_center_name}" placeholder="Study Center Name" class="form-control mb-4 col-4 ">
+				<input type="text" th:field="*{program_code_name}" placeholder="Program Code with Name" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{incharge}" placeholder="Center Incharge Name" class="form-control mb-4 col-4 ">
+				<input type="text" th:field="*{co_ordinator}" placeholder="Center Co-ordinator Name" class="form-control mb-4 col-4 ">
+				<input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
+			<button type="submit" class="btn btn-info col-2">Save</button>
+		</form>
+		<hr>
+		<a th:href="@{/members}">Back to Members' List</a>
+	</div>
+</body>
+</html>

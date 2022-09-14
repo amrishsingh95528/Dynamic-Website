@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background-image: url(/image/flower.gif);
+	opacity: 0.8;
+}
+
+.in {
+	width: 300px;
+	height: 20px;
+	border-radius: 5px 10px;
+}
+
+div {
+	padding: 5px;
+}
+
+sup {
+	color: red;
+}
+
+#container {
+	width: 352px;
+	height: 700px;
+	background: black;
+	border-radius: 10px 40px;
+	border: 5px solid red;
+	margin: auto;
+}
+
+h2 {
+	text-align: center;
+}
+
+fieldset {
+	width: 320px;
+	color: yellow;
+}
+
+.font {
+	color: yellow;
+}
+
+.gen {
+	margin-left: 40px;
+}
+
+select {
+	width: 300px;
+	height: 30px;
+	border-radius: 5px 10px;
+}
+
+.but1 {
+	width: 169px;
+	height: 30px;
+	background: red;
+	border-radius: 10px 40px;
+}
+
+.but2 {
+	width: 169px;
+	height: 30px;
+	background: green;
+	border-radius: 40px 10px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<form th:action="@{/saveRegistration}" th:object="${registration}"
+			method="POST">
+			<h2 class="font">Student Registration Form</h2>
+			<fieldset>
+				<legend>
+					<b>Personal Details</b>
+				</legend>
+				<div id="name">
+					<label class="font">First Name <sup>*</sup></label><br> <input
+						type="text" th:field="*{username}" class="in"
+						placeholder="Enter your first name">
+				</div>
+				<div id="lname">
+					<label class="font">Last Name <sup>*</sup></label><br> <input
+						type="text" th:field="*{password}" class="in"
+						placeholder="Enter your Last name">
+				</div>
+				<div id="email">
+					<label class="font">Email Id <sup>*</sup></label><br> <input
+						type="text" class="in" placeholder="Enter your email Id">
+				</div>
+				<div id="password">
+					<label class="font">Password <sup>*</sup></label><br> <input
+						type="text" class="in" placeholder="Enter your password">
+				</div>
+				<div id="age">
+					<label class="font">Age <sup>*</sup></label><br> <input
+						type="text" class="in" placeholder="Enter your age">
+				</div>
+			</fieldset>
+			<br>
+			<fieldset>
+				<legend>
+					<b>Select your gender</b>
+				</legend>
+				<div id="gender">
+					<label class="font">Male</label><input type="radio" class="gen"
+						name="gender"> <label class="font">Female</label><input
+						type="radio" class="gen" name="gender"> <label
+						class="font">Other</label><input type="radio" class="gen"
+						name="gender">
+				</div>
+			</fieldset>
+			<br>
+			<fieldset>
+				<legend>Select your degree</legend>
+				<div id="deg">
+					<select>
+						<option>....Select your degree....</option>
+						<option>Bachelor of Arts</option>
+						<option>Bachelor of Commerce</option>
+						<option>Bachelor of Science</option>
+						<option>Master of computer application</option>
+						<option>Master of business administration</option>
+					</select>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Select your course</legend>
+				<div id="cour">
+					<select>
+						<option>....Select your course....</option>
+						<option>C</option>
+						<option>C++</option>
+						<option>Java</option>
+						<option>MYSQL</option>
+						<option>Ruby</option>
+					</select>
+				</div>
+			</fieldset>
+			<br>
+			<div class="button">
+				<input type="reset" class="but1"> <input type="submit"
+					class="but2">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

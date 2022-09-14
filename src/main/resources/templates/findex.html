@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http.www.thymeleaf.org">
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  <header th:replace="header"></header>
+	  
+    
+    <section class="home-slider owl-carousel">
+     <div class="slider-item" style="background-image:url(image/ycmou4.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
+          
+        </div>
+        </div>
+      </div>
+      <div class="slider-item" style="background-image:url(image/ycmou1.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
+          
+        </div>
+        </div>
+      </div>
+    <div class="slider-item" style="background-image:url(image/ycmou7.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">  
+        </div>
+        </div>
+      </div>
+
+      <div class="slider-item" style="background-image:url(image/ycmou3.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
+          
+        </div>
+        </div>
+      </div>
+    </section>
+
+		<section class="ftco-section ftco-no-pt ftco-no-pb ftco-consult">
+			<div class="container">
+				<div class="row d-flex no-gutters align-items-stretch	consult-wrap">
+					<div class="col-md-5 wrap-about align-items-stretch d-flex">
+						<div class="ftco-animate bg-primary align-self-stretch px-4 py-5 w-100">
+							<h2 class="heading-white mb-4">Drop Message</h2>
+						<form class="appointment-form ftco-animate" th:action="@{/saveIndexMessage}" th:object="${message}" method="POST" >
+		    				<div class="form-group">
+		    					<input type="text" class="form-control" th:field="*{name}" placeholder="Your Name">
+		    				</div>
+		    				<div class="form-group">
+		    					<input type="text" class="form-control" th:field="*{number}" placeholder="Number">
+		    				</div>
+	    					<div class="form-group">
+		    					<input type="text" class="form-control" th:field="*{email}" placeholder="Email">
+		    				</div>
+	    					<div class="form-group">
+		    					<input type="text" class="form-control" th:field="*{subject}" placeholder="subject">
+		    				</div>
+	    					<div class="form-group">
+		              <textarea name="" id="" cols="30" rows="2" class="form-control" th:field="*{messageText}" placeholder="Message"></textarea>
+		            </div>
+		            <div class="form-group">
+		              <input type="submit" value="Request A Quote" class="btn btn-secondary py-3 px-4">
+		            </div>
+		    			</form>
+						</div>
+					</div>
+					<div class="col-md-7 ">
+						<div class="bg-white p-5" style="color:black;">
+							<h2><b>Notice <br>New Notifications</b></h2>
+							<div><p><marquee behavior="scroll" direction="up" scrollamount="5">★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                   ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                   ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                  ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                   ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                  ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                  ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                   ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                   ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                   ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                  ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                   ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                  ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                  ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                  ★ Schedule for submission of Synopsis and Project ★<br>
+							                                                                  
+							                                                                   </marquee></p></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="ftco-intro ftco-no-pb img" style="background-image: url(images/bg_3.jpg);">
+    	<div class="container">
+    		<div class="row justify-content-center">
+          <div class="col-md-10 text-center heading-section heading-section-white ftco-animate">
+            <h2 class="mb-0">You Always Get the Best Guidance</h2>
+          </div>
+        </div>	
+    	</div>
+    </section>
+	
+    <section class="ftco-section testimony-section">
+      <div class="container-fluid px-md-5">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8 text-center heading-section ftco-animate">
+          	<span class="subheading">Testimonies</span>
+            <h2 class="mb-4">Our Clients Says</h2>
+            <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+          </div>
+        </div>
+        <div class="row ftco-animate justify-content-center">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel">
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img" style="background-image: url(image/bhagatsingh_koshyari.png)">
+                  </div>
+                  <div class="text pl-4">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>Chancellor of Yashwantrao Chavan Maharashtra Open University, Nashik</p>
+                    <p class="name">Hon'ble. Bhagat Singh Koshyari</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img" style="background-image: url(image/VC.jpeg)">
+                  </div>
+                  <div class="text pl-4">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>Vice Chancellor of Yashwantrao Chavan Maharashtra Open University, Nashik</p>
+                    <p class="name">Hon'ble Dr. PrashantKumar Patil</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img" style="background-image: url(image/dinesh-bhonde.png)">
+                  </div>
+                  <div class="text pl-4">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>Registrar of Yashwantrao Chavan Maharashtra Open University, Nashik</p>
+                    <p class="name">Hon'ble. Dr. Dinesh Bhonde</p>
+                  </div>
+                </div>
+              </div>
+                           <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img" style="background-image: url(image/bhagatsingh_koshyari.png)">
+                  </div>
+                  <div class="text pl-4">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>Chancellor of Yashwantrao Chavan Maharashtra Open University, Nashik</p>
+                    <p class="name">Hon'ble. Bhagat Singh Koshyari</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img" style="background-image: url(image/VC.jpeg)">
+                  </div>
+                  <div class="text pl-4">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>Vice Chancellor of Yashwantrao Chavan Maharashtra Open University, Nashik</p>
+                    <p class="name">Hon'ble Dr. PrashantKumar Patil</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img" style="background-image: url(image/dinesh-bhonde.png)">
+                  </div>
+                  <div class="text pl-4">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>Registrar of Yashwantrao Chavan Maharashtra Open University, Nashik</p>
+                    <p class="name">Hon'ble. Dr. Dinesh Bhonde</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+   <header th:replace="footer"></header>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>

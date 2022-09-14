@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>New Employee</title>
+<style type="text/css">
+body {
+	background-image: url(/image/flower.gif);
+	opacity: 0.8;
+}
+
+.in {
+	width: 330px;
+	height: 30px;
+	border-radius: 5px 10px;
+	margin: auto;
+}
+
+div {
+	padding: 5px;
+}
+
+sup {
+	color: red;
+}
+
+#container {
+	width: 352px;
+	height: 440px;
+	background: black;
+	border-radius: 10px 40px;
+	border: 5px solid red;
+	margin: auto;
+	margin-top: 90px;
+}
+
+h2 {
+	text-align: center;
+}
+
+fieldset {
+	width: 320px;
+	color: yellow;
+}
+
+.font {
+	color: yellow;
+}
+
+.gen {
+	margin-left: 40px;
+}
+
+select {
+	width: 330px;
+	height: 30px;
+	border-radius: 5px 10px;
+}
+
+.but1 {
+	width: 155px;
+	height: 30px;
+	background: red;
+	border-radius: 10px 40px;
+}
+
+.but2 {
+	width: 155px;
+	height: 30px;
+	background: green;
+	border-radius: 40px 10px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<form th:action="@{/saveEmployeeAdmin}" th:object="${employee}"
+			method="POST">
+			<input type="hidden" th:field="*{id}"> 
+			<input type="hidden" th:field="*{lastDate}">
+			<input type="hidden" th:field="*{password}"> 
+			<input type="hidden" th:field="*{username}">
+			<input type="hidden" th:field="*{joinDate}">
+			<input type="hidden" th:field="*{address}">
+			<input type="hidden" th:field="*{email}">
+			<h3 class="font">Employee Registration Form</h3>
+			<label class="font">Full Name <sup>*</sup></label><br> <input
+				type="text" th:field="*{fullName}" class="in">
+				<label class="font">Number <sup>*</sup></label><br> 
+				<input type="text" th:field="*{number}" class="in"> 
+				<label class="font">Department <sup>*</sup>
+			</label><br> <input type="text" th:field="*{department}" class="in"> 
+			<label class="font"> Designation<sup>*</sup>
+			</label><br> <input type="text" th:field="*{designation}" class="in"> <br> 
+				<label class="font">Assign Manager <sup>*</sup>
+			</label>
+				<select th:field="*{manager}">
+				<option th:each="manager: ${managerList}" th:text="${manager.name}" th:value="${manager.name}"></option>
+			</select>
+			<br>
+			<br>
+			<div class="button">
+				<input type="reset" class="but1"> <input type="submit"
+					class="but2">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

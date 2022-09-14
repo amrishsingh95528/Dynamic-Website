@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<meta charset="ISO-8859-1">
+	<title> Study Center</title>
+</head>
+<body>
+	<div class="container py-4">
+		<h3>Study Center List</h3>
+		<hr>
+		<a th:href="@{/members/add}" class="btn btn-primary btn-sm mb-3">
+			Add Member
+		</a>
+		<hr>
+		  <nav class="navbar navbar-light bg-light px-3">
+			  <form th:action="@{/members}" method="get" class="form-inline d-flex align-items-center flex-nowrap">
+			    <input id="textSearch" name="keyword" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			    <button class="btn btn-outline-primary my-2 my-sm-0 m-2" type="submit">Search</button>
+			  </form>
+		  </nav>
+		  <br>
+		<table class="table table-bordered table-striped">
+			<thead class="table-dark">
+				<tr>
+					<th>Sr.no</th>
+					<th>District</th>
+					<th>SC.code</th>
+					<th>study_center_name</th>
+					<th>program_code_and_program_name</th>
+					<th>incharge</th>
+					<th>co-ordinator </th>
+					<th>email </th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="eachMember : ${members}">
+					<td th:text="${eachMember.getSr()}" />
+					<td th:text="${eachMember.getDistrict()}" />
+					<td th:text="${eachMember.getStudy_center_code()}" />
+					<td th:text="${eachMember.getStudy_center_name}" />
+					<td th:text="${eachMember.getProgram_code_name()}" />
+					<td th:text="${eachMember.getIncharge()}" />
+					<td th:text="${eachMember.getCo_ordinator()}" />
+					<td th:text="${eachMember.getEmail()}" />
+					<td>
+						<a th:href="@{/members/update(memberId=${eachMember.id})}" class="btn btn-success btn-sm">Update</a>
+						<a th:href="@{/members/delete(memberId=${eachMember.id})}" class="btn btn-danger btn-sm"
+						onclick="if(!confirm('Are you sure you want to delete this customer?')) { return false }">Delete</a>
+					</td>
+				</tr>			
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

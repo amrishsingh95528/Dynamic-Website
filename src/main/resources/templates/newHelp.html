@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Helpdesk</title>
+<style type="text/css">
+body {
+	background-image: url(/image/flower.gif);
+	opacity: 0.8;
+}
+
+.in {
+	width: 300px;
+	height: 20px;
+	border-radius: 5px 10px;
+}
+
+div {
+	padding: 5px;
+}
+
+sup {
+	color: red;
+}
+
+#container {
+	width: 352px;
+	height: 530px;
+	background: black;
+	border-radius: 10px 40px;
+	border: 5px solid red;
+	margin: auto;
+	margin-top: 50px;
+}
+
+h2 {
+	text-align: center;
+}
+
+fieldset {
+	width: 320px;
+	color: yellow;
+}
+
+.font {
+	color: yellow;
+}
+
+.gen {
+	margin-left: 40px;
+}
+
+select {
+	width: 300px;
+	height: 30px;
+	border-radius: 5px 10px;
+}
+
+.but1 {
+	width: 169px;
+	height: 30px;
+	background: red;
+	border-radius: 10px 40px;
+}
+
+.but2 {
+	width: 169px;
+	height: 30px;
+	background: green;
+	border-radius: 40px 10px;
+}
+</style>
+</head>
+
+<body>
+	<div id="container">
+		<form th:action="@{/saveHelp}" th:object="${help}" method="POST">
+			<h2 class="font">Helpdesk Registration Form</h2>
+			<fieldset>
+				<legend>
+					<b>Personal Details</b>
+				</legend>
+				<div id="name">
+					<label class="font">First Name <sup>*</sup></label><br> <input
+						type="text" maxlength="20" th:field="*{name}" class="in"
+						placeholder="Enter your first name" required>
+				</div>
+				<div id="lname">
+					<label class="font">Last Name <sup>*</sup></label><br> <input
+						type="text" maxlength="20" th:field="*{lastname}" class="in"
+						placeholder="Enter your Last name" required>
+				</div>
+				<div id="department">
+					<label class="font">Department <sup>*</sup></label><br> <input
+						type="text" maxlength="40" th:field="*{department}" class="in"
+						placeholder="Enter your Department" required>
+				</div>
+				<div id="designation">
+					<label class="font">Designation <sup>*</sup></label><br> <input
+						type="text" maxlength="40" th:field="*{designation}" class="in"
+						placeholder="Enter your Designation" required>
+				</div>
+			</fieldset>
+			<br>
+			<fieldset>
+				<legend>
+					<b>Ask Your Query</b>
+				</legend>
+				<div id="query">
+					<label class="font">Ask Query <sup>*</sup></label><br> <input
+						type="text" maxlength="70" th:field="*{ask_query}" class="in" placeholder="Enter your Query" required>
+				</div>
+			</fieldset>
+			
+			
+			<br>
+			<div class="button">
+				<input type="reset" class="but1"> <input type="submit"
+					class="but2">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

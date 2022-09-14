@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee List</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container my-2">
+	<h1>Employee List</h1>
+	<a th:href="@{/newEmployee}" class="btn btn-primary">AddNew</a>
+	<table border="1" class="table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th><a th:href="@{'/page/' + ${currentPage} + '?sortField=FullName&sortDir=' + ${reverseSortDir}}">
+							Full Name</a><i class="fas fa-sort"></i></th>
+				<th><a th:href="@{'/page/' + ${currentPage} + '?sortField=Number&sortDir=' + ${reverseSortDir}}">
+							Number</a></th>
+							<th>Email</th>
+							<th>Address</th>
+							<th>Department</th>
+							<th>Designation</th>
+							<th>Username</th>
+							<th>Password</th>
+							<th>Join Date</th>
+							<th>Last Date</th>
+				<th>Manager</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="emp:${employeeList}">
+				<td th:text="${emp.id}"></td>
+				<td th:text="${emp.fullName}"></td>
+				<td th:text="${emp.number}"></td>
+				<td th:text="${emp.email}"></td>
+				<td th:text="${emp.address}"></td>
+				<td th:text="${emp.department}"></td>
+				<td th:text="${emp.designation}"></td>
+				<td th:text="${emp.username}"></td>
+				<td th:text="${emp.password}"></td>
+				<td th:text="${emp.joinDate}"></td>
+				<td th:text="${emp.lastDate}"></td>
+				<td th:text="${emp.manager}"></td>
+				<td>
+				<a th:href="@{/updateEmployee/{id}(id=${emp.id})}" class="btn btn-primary">Update</a>
+				<a th:href="@{/deleteEmployee/{id}(id=${emp.id})}" class="btn btn-danger">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div th:if = "${totalPages > 1}">
+			<div class = "row col-sm-14">
+				<div class = "col-sm-2">
+					Total Rows: [[${totalItems}]] 
+				</div>
+				<div class = "col-sm-1">
+					<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+						<a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+						<span th:unless="${currentPage != i}">[[${i}]]</span>  
+					</span>
+				</div>
+				<div class = "col-sm-1">
+					<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
+					<span th:unless="${currentPage < totalPages}">Next</span>
+				</div>
+				
+				 <div class="col-sm-1">
+    				<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+					<span th:unless="${currentPage < totalPages}">Last</span>
+   				 </div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

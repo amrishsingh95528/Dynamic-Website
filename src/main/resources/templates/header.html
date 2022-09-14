@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+  </head>
+  <body>
+  <header th:fragments="header">
+	<div class="bg-top navbar-light d-flex flex-column-reverse">
+    	<div class="container" style="margin:5px; height:100px;">
+    		<div class="row no-gutters d-flex align-items-center align-items-stretch">
+    			<div class="col-1 d-flex align-items-center py-4">
+    				<a class="navbar-brand" href="index.html" style="margin-top:-20px;"><img th:src="@{/image/logo-ycmou.jpg}" /></a>
+    			</div>
+	    		<div class="col-11">
+		    		<div class="row d-flex">
+					    <div class="col-12 d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="text" style="margin-top:-10px;">
+					    		<span><h4><b>Yashwantrao Chavan Maharashtra Open University, Nashik-422222<b></b></h4></span>
+					    		<span><h5>Regional Center Nagpur &nbsp &nbsp &nbsp <small class="ion-ios-paper-plane"></small>&nbsp<small>rd_nagpur@ycmou.digitaluniversity.ac &nbsp &nbsp &nbsp</small><small class="ion-ios-call"></small>&nbsp<small>9422247295</small></h5><span>
+						    	
+						    </div>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+		  <div class="top-social-menu py-2 bg-primary" style="height:40px;">
+		  	<div class="container">
+		  		<div class="row">
+			    	<div class="col-9">
+			    		<p class="social mb-2 mt-0">
+			    			<a th:href="@{/members}" style="color:white;"><span class="sr-only">Facebook</span><U><i><b>STUDY CENTER LIST</b></i></U></a>
+			    			<a th:href="@{/showFees}" style="color:white;"><span class="sr-only">Facebook</span><U><i><b>COURSES FEES STRUCTURE</b></i></U></a>
+			    			<a th:href="@{image/onlineAdmissionPpt.pdf}" target="_blank" style="color:white;"><span class="sr-only">Facebook</span><U><i><b>ONLINE ADMISSION PPT</b></i></U></a>
+			    		</p>
+			    	</div>
+			    	<div class="col-3">
+			    		<p class="social mb-0">
+			    			<a href="#" style="background-color:black; padding:5px; border-radius:50%;"><i class="ion-logo-instagram" style="color:white;"></i><span class="sr-only">Facebook</span></a>
+			    			<a href="#" style="background-color:black; padding:5px; border-radius:50%;"><i class="ion-logo-twitter" style="color:white;"></i><span class="sr-only">Twitter</span></a>
+			    			<a href="#" style="background-color:black; padding:5px; border-radius:50%;"><i class="ion-logo-googleplus" style="color:white;"></i><span class="sr-only">Googleplus</span></a>
+			    		</p>
+			    	</div>
+			     </div>
+		  	</div>
+		  </div>
+    </div>
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar" style="height:50px; border:1px solid black;">
+	    <div class="container d-flex align-items-center">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	     
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item"><a th:href="@{/findex}" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a th:href="@{/about}" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a th:href="@{/webProspectus}" class="nav-link">Prospectus</a></li>
+	        	<li class="nav-item"><a th:href="@{/webTTable}" class="nav-link">Time Table</a></li>
+	        	<li class="nav-item"><a th:href="@{/showEmployeeForEndUsers}" class="nav-link">YCMOU Staff</a></li>
+	        	
+	        	
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+	        	<li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+      	        	<li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+	        	
+	          <li class="nav-item"><a th:href="@{/newMessage}" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+	  </header>
+  </body>
+</html>
